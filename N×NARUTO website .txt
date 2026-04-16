@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>N×NARUTO - Free Fire Diamond & Shell Top Up Sri Lanka</title>
+<style>
+:root{--black:#111111;--white:#ffffff;--yellow:#ffd600;--yellow-light:#fff9c4;--gray:#f5f5f5;--border:#e0e0e0;--text:#111111;--subtext:#666666;--green:#2e7d32}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,Arial,sans-serif}
+body{background:var(--gray);color:var(--text)}
+.container{max-width:480px;margin:0 auto;background:var(--white);min-height:100vh;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.topbar{background:var(--black);color:var(--yellow);padding:8px;text-align:center;font-size:12px;font-weight:700;letter-spacing:0.5px}
+.header{padding:24px 20px;text-align:center;border-bottom:1px solid var(--border)}
+.header h1{font-size:28px;font-weight:900;color:var(--black);letter-spacing:1px}
+.header h1 span{color:var(--yellow);text-shadow:1px 1px 0 var(--black)}
+.header p{font-size:13px;color:var(--subtext);margin-top:4px}
+.badge{background:var(--yellow-light);color:var(--black);padding:10px;text-align:center;font-size:12px;font-weight:700;border-bottom:2px solid var(--yellow)}
+.section{padding:20px;border-bottom:8px solid var(--gray)}
+.section h2{font-size:16px;margin-bottom:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+.step-num{background:var(--yellow);color:var(--black);border-radius:4px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
+.category-title{background:var(--black);color:var(--yellow);padding:10px 20px;font-weight:800;font-size:14px;letter-spacing:1px;margin:15px -20px 10px -20px;display:flex;align-items:center;gap:8px}
+.pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.pack{border:2px solid var(--border);padding:12px;border-radius:8px;position:relative;cursor:pointer;transition:0.2s;background:var(--white)}
+.pack:hover{border-color:var(--yellow);transform:translateY(-2px)}
+.pack.active{border-color:var(--yellow);background:var(--yellow-light);box-shadow:0 0 0 1px var(--yellow)}
+.pack-name{font-weight:700;font-size:14px;line-height:1.2;margin-bottom:4px}
+.pack-price{color:var(--black);font-weight:900;font-size:16px}
+.pack-bonus{font-size:10px;color:var(--subtext);margin-top:4px;line-height:1.3}
+.pack-type{font-size:9px;color:var(--subtext);margin-top:3px;font-weight:700}
+.tag{position:absolute;top:-6px;right:6px;background:var(--yellow);color:var(--black);font-size:9px;padding:3px 6px;border-radius:3px;font-weight:800}
+.selected{font-size:13px;color:var(--subtext);margin-top:15px;padding:10px;background:var(--gray);border-radius:6px;text-align:center}
+.selected b{color:var(--text)}
+label{display:block;font-size:13px;margin:12px 0 6px;font-weight:700}
+.uid-group{display:flex;gap:8px}
+input[type="text"]{width:100%;padding:12px;border:1px solid var(--border);border-radius:6px;font-size:15px}
+input[type="text"]:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+.uid-group input{flex:1}
+button{padding:0 16px;background:var(--yellow);color:var(--black);border:none;border-radius:6px;font-weight:800;font-size:14px;cursor:pointer;white-space:nowrap}
+button:disabled{background:#e0e0e0;color:#999;cursor:not-allowed}
+button.verified{background:var(--black);color:var(--yellow)}
+.help{font-size:11px;color:var(--subtext);margin-top:5px}
+.verify-stage{display:none;margin-top:12px}
+.verify-stage.show{display:block}
+.verified-box{background:var(--yellow-light);border:1px solid var(--yellow);padding:12px;border-radius:6px;margin-top:10px;font-size:13px;display:none}
+.verified-box.show{display:block}
+.verified-box b{color:var(--black)}
+.idname{font-weight:700;margin-top:4px}
+.bankbox{background:var(--yellow-light);border:2px solid var(--yellow);padding:14px;border-radius:8px;margin:12px 0;font-size:13px;line-height:1.6}
+.bankbox p{margin:4px 0}
+.upload-box{border:2px dashed var(--border);border-radius:8px;padding:20px;text-align:center;margin:12px 0;cursor:pointer;transition:0.2s}
+.upload-box:hover{border-color:var(--yellow);background:var(--yellow-light)}
+.upload-box.has-file{border-color:var(--green);background:#e8f5e9;border-style:solid}
+.upload-box input[type="file"]{display:none}
+.upload-icon{font-size:32px;margin-bottom:8px}
+.upload-text{font-size:13px;font-weight:700;color:var(--text)}
+.upload-sub{font-size:11px;color:var(--subtext);margin-top:4px}
+.file-name{font-size:12px;color:var(--green);font-weight:700;margin-top:8px;word-break:break-all}
+.checkbox-wrap{display:flex;align-items:start;gap:10px;background:var(--gray);padding:12px;border-radius:8px;margin:15px 0;border:2px solid var(--border)}
+.checkbox-wrap input[type="checkbox"]{width:20px;height:20px;margin-top:2px;cursor:pointer;accent-color:var(--yellow)}
+.checkbox-wrap label{margin:0;font-size:13px;font-weight:600;line-height:1.4;cursor:pointer}
+.submit-btn{width:100%;padding:15px;background:#25D366;color:white;font-weight:900;border:none;border-radius:8px;font-size:16px;margin-top:12px}
+.submit-btn:disabled{background:#e0e0e0;color:#999}
+.faq{padding:20px;font-size:12px}
+.faq h3{font-size:15px;margin-bottom:12px;font-weight:800}
+.faq b{display:block;margin-top:10px;color:var(--text)}
+.footer{text-align:center;font-size:11px;color:var(--subtext);padding:24px;background:var(--gray)}
+.success{text-align:center;padding:50px 20px}
+.success h2{color:var(--black);font-size:24px;margin-bottom:10px;font-weight:900}
+.order-summary{background:var(--yellow-light);border:2px solid var(--yellow);padding:15px;border-radius:8px;margin:15px 0;text-align:left;font-size:13px;line-height:1.8}
+.hide{display:none}
+.debug{background:#fff3cd;border:1px solid #ffc107;padding:10px;margin:10px 0;border-radius:6px;font-size:12px}
+@media(max-width:360px){.pack-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="topbar">TRUSTED BY 50,000+ GAMERS IN SRI LANKA</div>
+<div class="header">
+<h1>N<span>×</span>NARUTO</h1>
+<p>Free Fire Diamond & Garena Shell Top Up</p>
+</div>
+<div class="badge">INSTANT DELIVERY: 5-30 MINS AFTER PAYMENT</div>
+
+<div id="orderForm">
+<div class="section">
+<h2><span class="step-num">1</span>SELECT YOUR PACK</h2>
+<div id="debugBox" class="debug hide"></div>
+<div id="packList"></div>
+<p class="selected">Selected: <b id="selectedPack">None selected</b></p>
+</div>
+
+<div class="section">
+<h2><span class="step-num">2</span>VERIFY GAME ACCOUNT</h2>
+<label id="uidLabel">Game Account UID/Email *</label>
+<div class="uid-group">
+<input type="text" id="uid" placeholder="Enter UID or Email" oninput="resetVerify()">
+<button type="button" id="verifyBtn" onclick="startVerify()">VERIFY</button>
+</div>
+<p class="help" id="uidHelp">Free Fire: Profile → Copy UID | Garena: Use account email</p>
+
+<div id="verifyStage" class="verify-stage">
+<label>Confirm Your In-Game Name *</label>
+<input type="text" id="gameName" placeholder="Type exact in-game name">
+<button type="button" class="submit-btn" onclick="confirmName()" style="margin-top:8px;background:var(--yellow);color:var(--black)">CONFIRM & VERIFY ACCOUNT</button>
+</div>
+
+<div id="verifiedBox" class="verified-box">
+<b>✓ ACCOUNT VERIFIED SUCCESSFULLY</b>
+<div class="idname">Player: <span id="displayName"></span></div>
+<div class="idname">UID: <span id="displayUID"></span></div>
+</div>
+</div>
+
+<div class="section">
+<h2><span class="step-num">3</span>UPLOAD PAYMENT RECEIPT</h2>
+<div class="bankbox">
+<p><b>Bank:</b> BOC</p>
+<p><b>Account Name:</b> JS DEVI</p>
+<p><b>Account No:</b> 95215450</p>
+<p style="margin-top:8px;color:var(--red);font-weight:700">Transfer exact amount, then upload receipt below</p>
+</div>
+
+<label>Upload Bank Transfer Receipt/Screenshot *</label>
+<div class="upload-box" id="uploadBox" onclick="document.getElementById('receiptFile').click()">
+<input type="file" id="receiptFile" accept="image/*" onchange="handleFileUpload(event)">
+<div id="uploadContent">
+<div class="upload-icon">📸</div>
+<div class="upload-text">Click to Upload Receipt</div>
+<div class="upload-sub">JPG, PNG or Screenshot from bank app</div>
+</div>
+</div>
+
+<div class="checkbox-wrap">
+<input type="checkbox" id="confirmCheck" onchange="checkForm()">
+<label for="confirmCheck">I confirm that I have transferred the exact amount and uploaded the correct receipt. My UID/Game Name is 100% correct. I understand wrong UID = no refund.</label>
+</div>
+
+<button class="submit-btn" id="submitBtn" onclick="submitOrder()" disabled>📱 SEND ORDER VIA WHATSAPP</button>
+<p class="help">After uploading receipt + ticking box, click above. WhatsApp opens with order details. Send the receipt image in that chat.</p>
+</div>
+</div>
+
+<div id="successPage" class="success hide">
+<h2>ORDER SENT TO WHATSAPP</h2>
+<p>Check your WhatsApp. Send the receipt image in that chat:</p>
+<div class="order-summary">
+<p><b>Order ID:</b> <span id="o_id"></span></p>
+<p><b>Type:</b> <span id="o_type"></span></p>
+<p><b>Player:</b> <span id="o_name"></span></p>
+<p><b>UID:</b> <span id="o_uid"></span></p>
+<p><b>Pack:</b> <span id="o_pack"></span></p>
+<p><b>Amount:</b> Rs <span id="o_amt"></span></p>
+<p style="color:var(--red);margin-top:8px"><b>⚠️ IMPORTANT: Send your receipt screenshot in WhatsApp now</b></p>
+</div>
+<a id="waLink" class="submit-btn" style="display:block;text-decoration:none;text-align:center">OPEN WHATSAPP AGAIN</a>
+<button class="submit-btn" onclick="location.reload()" style="background:var(--black);margin-top:8px">PLACE ANOTHER ORDER</button>
+</div>
+
+<div class="faq">
+<h3>FREQUENTLY ASKED QUESTIONS</h3>
+<b>Q: How fast is delivery?</b>
+A: Usually 5-10 minutes after we verify your receipt on WhatsApp. Max 30 minutes during peak hours.
+<b>Q: What if diamonds/shells don't arrive?</b>
+A: Reply to us on WhatsApp with your Order ID
+<b>Q: How do I send the receipt?</b>
+A: After clicking the button, WhatsApp opens. Just attach your receipt screenshot in that chat.
+</div>
+
+<div class="footer">
+N×NARUTO is an independent service provider. Not affiliated with Garena Free Fire.<br>
+© 2026 N×NARUTO. All rights reserved.
+</div>
+</div>
+
+<script>
+const ADMIN_WHATSAPP = "94758838871";
+
+const DEFAULT_PACKS = {
+diamond:[
+{name:'Weekly Lite',price:130,bonus:'60 diamonds daily × 7 days',tag:''},
+{name:'Weekly',price:530,bonus:'450 diamonds + Bonus rewards',tag:'HOT'},
+{name:'Monthly',price:2550,bonus:'2200 diamonds + Monthly bonus',tag:''},
+{name:'VIP',price:2940,bonus:'2500 diamonds + VIP perks',tag:'VIP'},
+{name:'S.VIP',price:4950,bonus:'5000 diamonds + Super VIP rewards',tag:'BEST'}
+],
+shell:[
+{name:'33 Shells',price:200,bonus:'= 100 Diamonds',tag:''},
+{name:'66 Shells',price:400,bonus:'= 210 Diamonds',tag:'HOT'},
+{name:'165 Shells',price:1000,bonus:'= 530 Diamonds',tag:''},
+{name:'330 Shells',price:2000,bonus:'= 1080 Diamonds',tag:'BEST'},
+{name:'660 Shells',price:4000,bonus:'= 2200 Diamonds',tag:'VIP'}
+]};
+
+let allPacks = {};
+let selectedPack = null;
+let receiptUploaded = false;
+
+function showDebug(msg){
+let box = document.getElementById('debugBox');
+box.innerText = msg;
+box.classList.remove('hide');
+console.log(msg);
+}
+
+function initPacks(){
+try{
+let saved = localStorage.getItem('nxn_packs');
+if(saved){
+allPacks = JSON.parse(saved);
+showDebug('Loaded packs from localStorage');
+}else{
+allPacks = DEFAULT_PACKS;
+localStorage.setItem('nxn_packs', JSON.stringify(DEFAULT_PACKS));
+showDebug('Using default packs - saved to localStorage');
+}
+renderPacks();
+}catch(e){
+showDebug('ERROR: ' + e.message + ' - Using defaults');
+allPacks = DEFAULT_PACKS;
+renderPacks();
+}
+}
+
+function renderPacks(){
+try{
+let html = '';
+let diamondPacks = allPacks.diamond || [];
+let shellPacks = allPacks.shell || [];
+let totalPacks = diamondPacks.length + shellPacks.length;
+
+if(totalPacks === 0){
+showDebug('ERROR: 0 packs found in data');
+return;
+}
+
+if(diamondPacks.length > 0){
+html += `<div class="category-title">💎 FREE FIRE DIAMONDS</div><div class="pack-grid">`;
+diamondPacks.forEach((p, i) => {
+html += `<div class="pack" data-type="diamond" data-index="${i}">
+${p.tag?`<div class="tag">${p.tag}</div>`:''}
+<div class="pack-name">${p.name}</div>
+<div class="pack-price">Rs ${p.price}</div>
+<div class="pack-bonus">${p.bonus}</div>
+<div class="pack-type">DIAMOND</div>
+</div>`;
+});
+html += `</div>`;
+}
+
+if(shellPacks.length > 0){
+html += `<div class="category-title">🎮 GARENA SHELLS</div><div class="pack-grid">`;
+shellPacks.forEach((p, i) => {
+html += `<div class="pack" data-type="shell" data-index="${i}">
+${p.tag?`<div class="tag">${p.tag}</div>`:''}
+<div class="pack-name">${p.name}</div>
+<div class="pack-price">Rs ${p.price}</div>
+<div class="pack-bonus">${p.bonus}</div>
+<div class="pack-type">SHELL</div>
+</div>`;
+});
+html += `</div>`;
+}
+
+document.getElementById('packList').innerHTML = html;
+
+document.querySelectorAll('.pack').forEach(el => {
+el.addEventListener('click', function(){
+selectPack(this);
+});
+});
+
+showDebug('Rendered ' + totalPacks + ' packs successfully');
+}catch(e){
+showDebug('RENDER ERROR: ' + e.message);
+}
+}
+
+function selectPack(el){
+document.querySelectorAll('.pack').forEach(x=>x.classList.remove('active'));
+el.classList.add('active');
+let type = el.getAttribute('data-type');
+let idx = parseInt(el.getAttribute('data-index'));
+selectedPack = allPacks[type][idx];
+selectedPack.type = type;
+let typeText = type==='diamond'?'Diamond':'Shell';
+document.getElementById('selectedPack').innerText = `${selectedPack.name} - Rs ${selectedPack.price} (${typeText})`;
+checkForm();
+}
+
+function startVerify(){
+let uid = document.getElementById('uid').value.trim();
+if(uid.length < 5){ alert('Enter valid UID/Email'); return; }
+window.playerUID = uid;
+document.getElementById('verifyStage').classList.add('show');
+document.getElementById('verifyBtn').innerText = 'ENTER NAME';
+document.getElementById('verifyBtn').disabled = true;
+}
+
+function confirmName(){
+let name = document.getElementById('gameName').value.trim();
+if(name.length < 3){ alert('Enter your real in-game name'); return; }
+window.playerName = name;
+window.verified = true;
+document.getElementById('displayName').innerText = window.playerName;
+document.getElementById('displayUID').innerText = window.playerUID;
+document.getElementById('verifiedBox').classList.add('show');
+document.getElementById('verifyStage').classList.remove('show');
+document.getElementById('verifyBtn').innerText = '✓ VERIFIED';
+document.getElementById('verifyBtn').classList.add('verified');
+checkForm();
+}
+
+function resetVerify(){
+window.verified = false;
+document.getElementById('verifiedBox').classList.remove('show');
+document.getElementById('verifyStage').classList.remove('show');
+let btn = document.getElementById('verifyBtn');
+btn.innerText = 'VERIFY'; btn.classList.remove('verified'); btn.disabled = false;
+checkForm();
+}
+
+function handleFileUpload(e){
+let file = e.target.files[0];
+if(file){
+receiptUploaded = true;
+document.getElementById('uploadBox').classList.add('has-file');
+document.getElementById('uploadContent').innerHTML = `
+<div class="upload-icon">✓</div>
+<div class="upload-text">Receipt Uploaded</div>
+<div class="file-name">${file.name}</div>
+`;
+checkForm();
+}
+}
+
+function checkForm(){
+let checked = document.getElementById('confirmCheck').checked;
+document.getElementById('submitBtn').disabled =!(window.playerUID && window.playerUID.length >= 5 && window.verified && checked && selectedPack && receiptUploaded);
+}
+
+function submitOrder(){
+let orderId = 'NXN' + Date.now();
+let typeText = selectedPack.type==='diamond'?'Diamonds':'Garena Shells';
+
+let order = {id:orderId,type:selectedPack.type,uid:window.playerUID,name:window.playerName,pack:selectedPack.name,amount:selectedPack.price,status:'Pending',time:new Date().toLocaleString()};
+let orders = JSON.parse(localStorage.getItem('nxn_orders')||'[]');
+orders.unshift(order);
+localStorage.setItem('nxn_orders',JSON.stringify(orders));
+
+let msg = `*NEW N×NARUTO ORDER* 🔥%0A%0A` +
+`*Order ID:* ${orderId}%0A` +
+`*Type:* ${typeText}%0A` +
+`*Player:* ${window.playerName}%0A` +
+`*UID:* ${window.playerUID}%0A` +
+`*Pack:* ${selectedPack.name}%0A` +
+`*Amount:* Rs ${selectedPack.price}%0A` +
+`*Time:* ${new Date().toLocaleString()}%0A%0A` +
+`Receipt screenshot attached. Please verify and send.`;
+
+let waUrl = `https://wa.me/${ADMIN_WHATSAPP}?text=${msg}`;
+
+document.getElementById('o_id').innerText = orderId;
+document.getElementById('o_type').innerText = typeText;
+document.getElementById('o_uid').innerText = window.playerUID;
+document.getElementById('o_name').innerText = window.playerName;
+document.getElementById('o_pack').innerText = selectedPack.name;
+document.getElementById('o_amt').innerText = selectedPack.price;
+document.getElementById('waLink').href = waUrl;
+document.getElementById('orderForm').classList.add('hide');
+document.getElementById('successPage').classList.remove('hide');
+window.scrollTo(0,0);
+
+setTimeout(()=>{ window.open(waUrl, '_blank'); }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', initPacks);
+</script>
+</body>
+</html>
